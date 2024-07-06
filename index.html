@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PORTFOLIO</title>
+</head>
+<!-- CODE BY ZAHEER SHAH -->
+
+<body>
+    <!-- section 1 -->
+    <section class="nav-bar">
+        <nav class="nav-container">
+            <div class="left">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#project">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="REG-btn">
+                <button class="btn"><a href="cv.pdf">Resume</a></button>
+                <button class="btn"><a href="mailto:zh5999969@gmail.com">E-mail</a></button>
+                <button class="btn"><a href="https://github.com/zaheer-shah" target="_blank">Github</a></button>
+            </div>
+        </nav>
+    </section>
+
+
+    <!-- section 2 -->
+    <section class="home">
+        <div id="home" class="main">
+            <div class="hero">
+                <h2>I'm <span>Syed Zaheer Hussain Shah</span></h2>
+                <p>FRONT-END WEB DEVELOPER</p>
+                <a href="#about">More about me</a>
+            </div>
+            <div class="info">
+                <img src="doc.png" alt="profile img">
+            </div>
+        </div>
+    </section>
+
+    <!-- section 3 -->
+    <section class="about-me">
+        <div id="about" class="extra"></div>
+        <h1>About Me</h1>
+        <p>I'm a Front-End Web Developer with a passion for user-friendly and visually awesome looking websites,
+            i have my expertise in HTML, CSS, BOOTSTRAP and JAVASCRIPT to bring digital products to life , ensuring a
+            seamless
+            user experience across all devices.My focus is to create interactive feature that not only look great,
+            but also function flawlessly and my goal is to deliver high quality quality solutions
+            that exceed expectations and provide seamless user experiance.
+            I am always eager to take on new challenges and collaborate with like-minded indiviuals
+            to push the boundaries of what's possible in the world of web development.
+        </p>
+    </section>
+
+
+
+    <!-- section 4 -->
+    <section id="services" class="services">
+        <h1>Services</h1>
+        <div class="cards-area">
+
+            <div class="cards">
+                <img src="front.png" alt=" card image here">
+                <span>FRONT-END Web Developer</span>
+
+            </div>
+
+            <div class="cards">
+                <img src="wordpress.png" alt=" card image here">
+                <span>Wordpress</span>
+
+            </div>
+
+            <div class="cards">
+                <img src="graphic.png" alt=" card image here">
+                <span>Graphic Designing</span>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- section 5 -->
+    <section id="project" class="projects">
+        <h1>Projects</h1>
+        <div class="projects-area">
+
+            <div class="proj">
+                <h3>TO-Do List</h3>
+                <p>created with html,css and javascript and fully function app,includes functions like
+                    edit , save , check/uncheck and delete list. </p>
+                    <a href="https://to-do-list-by-zaheer-shah.vercel.app/" target="_blank">Visit</a>
+            </div>
+            <div class="proj">
+                <h3>QR code Generator</h3>
+                <p>created with html,css and javascript and ,write any text and it will generate your Qr code in just one click. </p>
+                    <a href="https://text-qr-code-generator-by-zaheer-shah.vercel.app/" target="_blank">Visit</a>
+            </div>
+            <div class="proj">
+                <h3>Color n code Generator</h3>
+                <p>created with html,css and javascript and just click the given button and it will 
+                    generate new color on every click.  </p>
+                    <a href="https://random-color-code-generator-by-zaheer-shah.vercel.app/" target="_blank">Visit</a>
+            </div>
+            <div class="proj">
+                <h3>Simple currency Converter</h3>
+                <p>created with html,css and javascript and have some popular currencies only and its working smooth and fine. </p>
+                    <a href="https://currency-converter-by-zaheer-shah.vercel.app/" target="_blank">Visit</a>
+            </div>
+            
+            <div class="proj-two">
+                <h3>Learn coding</h3>
+                <p>created with html,css and javascript , its kinda duplication of w3schools website but not that level , but with simple web design  </p>
+                    <a href="https://learn-code-by-zaheershah-nu.vercel.app/" target="_blank">Visit</a>
+            </div>
+            <div class="proj-two">
+                <h3>Resturant Website</h3>
+                <p>created with html and css only a very good looking interface website , which atttracts users towards itself.  </p>
+                    <a href="https://resturant-website-by-zaheershah.vercel.app/" target="_blank">Visit</a>
+            </div>
+           
+            <div class="proj-two">
+                <h3>Music Website</h3>
+                <p>created with html,css and javascript and fully function app,includes songs and songs can played online and can also be downloaded. </p>
+                    <a href="https://music-website-by-zaheershah.vercel.app/" target="_blank">Visit</a>
+            </div>
+            <div class="proj-two">
+                <h3>Landing page</h3>
+                <p>created with html,css and javascript , it contains some basic information about me and its interface is also fine and attractive. </p>
+                    <a href="https://landing-page-by-zaheershah.vercel.app/" target="_blank">Visit</a>
+            </div>
+           
+            
+            
+
+
+
+
+        </div>
+    </section>
+
+
+    <!-- section 6 -->
+    <section id="contact" class="contact">
+        <h1>Contact with me</h1>
+
+        <form onsubmit="return fun()" class="contact-container">
+
+            <span class="text-danger" id="nameval"></span>
+            <input type="text" id="username" placeholder="write your name">
+
+            <span class="text-danger" id="emailval"></span>
+            <input type="email" id="mail" placeholder="write your email">
+            
+            <span class="text-danger" id="mobileval"></span>
+            <input type="number" id="mobile" placeholder="write your phone">
+            
+            <span class="text-danger" id="textval"></span>
+            <textarea name="text" id="textarea" placeholder=" write your subject"></textarea>
+            
+            <button class="sub-btn" onclick="Submit"> Submit</button>
+        </form>
+    </section>
+
+
+    <footer style="text-align: center; color: rgb(0, 0, 0);"> &copy SYED ZAHEER HUSSAIN SHAH - 2024</footer>
+
+
+<script src="script.js"></script>
+</body>
+
+</html>
