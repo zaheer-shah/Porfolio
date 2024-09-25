@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<htm lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ZAHEER | SHAH</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                scroll-behavior: smooth;
+            }
+
+            body {
+                background-color: white;
+                color: rgb(141, 140, 140);
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            .mylogo img {
+                height: 35px;
+                width: 35px;
+            }
+
+            .text-danger {
+                color: red;
+                font-size: 13px;
+            }
+
+            .nav-bar {
+                width: 100%;
+                position: fixed;
+                z-index: 100;
+                background-color: #e93700;
+            }
+
+            .nav-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                flex-wrap: wrap;
+            }
+
+            .left a {
+                padding: 5px;
+                text-decoration: none;
+                color: wheat;
+                font-weight: 600;
+                margin: 5px;
+            }
+
+            .left a:hover {
+                color: #ffffff;
+            }
+
+            .REG-btn {
+                display: flex;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .REG-btn a {
+                cursor: pointer;
+                text-decoration: none;
+                color: #ffffff;
+            }
+
+
+            /* side menu */
+            .lines {
+                display: none;
+            }
+
+            .lines img {
+                width: 40px;
+                cursor: pointer;
+            }
+
+            .lines img:hover {
+                transform: scale(1.1);
+                transition: 0.5s;
+            }
+
+            /* The side menu */
+            .side-menu {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 10000;
+                top: 0;
+                right: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
+
+            .side-menu a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+                background-color: #111;
+            }
+
+            .side-menu a:hover {
+                color: #f1f1f1;
+
+            }
+
+            .side-menu .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+            /* When the menu is opened */
+            .side-menu.open {
+                width: 250px;
+            }
+
+            /* side end  */
+
+            .btn {
+                padding: 8px 15px;
+                font-weight: 600;
+                border: 1px transparent;
+                border-radius: 3px;
+                background-color: #434242;
+                cursor: pointer;
+            }
+
+            .btn:hover {
+                background-color: #949292;
+                color: white;
+                transition: 0.5s ease-in-out;
+            }
+
+            .home {
+                width: 100%;
+                height: 110vh;
+                border-bottom: 1px solid gray;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .main {
+                padding-top: 70px;
+
+                display: flex;
+                gap: 50px;
+                flex-wrap: wrap-reverse;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+            .hero {
+                flex: 1;
+                text-align: center;
+            }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .hero h2 span {
+                color: #e93700;
+            }
+
+            .hero p {
+                font-size: 18px;
+                margin: 15px 0;
+            }
+
+            .hero a {
+                padding: 10px 20px;
+                background-color: #e93700;
+                color: #e2e0e0;
+                border-radius: 3px;
+                text-decoration: none;
+                font-weight: 600;
+                display: inline-block;
+                margin-top: 10px;
+            }
+
+            .hero a:hover {
+                color: white;
+            }
+
+            .info img {
+                width: 100%;
+                max-width: 300px;
+                border-top-left-radius: 45px;
+                border-bottom-right-radius: 45px;
+            }
+
+            .about-me,
+            .services,
+            .projects,
+            .contact {
+                padding: 35px 20px;
+                text-align: center;
+                border-bottom: 1px solid gray;
+            }
+
+            .about-me h1,
+            .services h1,
+            .projects h1,
+            .contact h1 {
+                font-weight: 700;
+                font-size: 30px;
+                color: #e93700;
+            }
+
+            .about-me p {
+                margin-top: 20px;
+                font-size: 18px;
+                color: gray;
+                line-height: 1.6;
+            }
+
+            .cards-area,
+            .projects-area,
+            .contact-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                margin-top: 30px;
+            }
+
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .cards {
+                background-color: rgb(255, 255, 255);
+                width: 100%;
+                max-width: 270px;
+                height: 250px;
+                border-radius: 9px;
+                box-shadow: 3px 4px 5px rgb(82, 62, 102);
+                transition: transform 0.4s ease-in-out;
+                cursor: pointer;
+            }
+
+            .cards:hover {
+                transform: scale(1.04);
+            }
+
+            .cards img {
+                margin-bottom: 20px;
+                border-radius: 9px;
+                width: 100%;
+                height: 185px;
+            }
+
+            .services span {
+                font-weight: 600;
+                color: #e93700;
+            }
+
+            .proj,
+            .proj-two {
+                background-color: white;
+                border: 1px solid red;
+                border-radius: 15px;
+                padding: 15px;
+                width: 100%;
+                max-width: 300px;
+                transition: background-color 0.3s;
+            }
+
+            .proj:hover {
+                background-color: #e93700;
+                color: white;
+
+                .proj h3 {
+                    color: #ffffff;
+                }
+            }
+
+            .proj h3 {
+                color: #e93700;
+                margin-bottom: 10px;
+            }
+
+            .proj h3:hover {
+
+                color: #ffffff;
+            }
+
+            .proj p {
+                margin-bottom: 15px;
+            }
+
+            .proj a,
+            .proj-two a {
+                text-decoration: none;
+                color: #e93700;
+                padding: 5px 15px;
+                border-radius: 3px;
+                background-color: white;
+                display: inline-block;
+            }
+
+            .proj a:hover,
+            .proj-two a:hover {
+                font-weight: 600;
+                color: white;
+                background-color: #e93700;
+            }
+
+            .contact-container input,
+            .contact-container textarea {
+                padding: 10px;
+                width: 100%;
+                max-width: 500px;
+                border: 1px solid #e93700;
+                border-radius: 3px;
+                margin-bottom: 15px;
+            }
+
+            .sub-btn {
+                padding: 10px 30px;
+                font-weight: 600;
+                font-size: 15px;
+                border: 1px transparent;
+                border-radius: 3px;
+                cursor: pointer;
+                background-color: #e93700;
+                color: rgb(226, 224, 224);
+            }
+
+            .sub-btn:hover {
+                color: white;
+            }
+
+            footer {
+                text-align: center;
+                padding: 20px 0;
+                color: rgb(0, 0, 0);
+                background-color: #f4f4f4;
+                border-top: 1px solid gray;
+            }
+
+            @media (max-width: 768px) {
+
+                .lines {
+                    display: block;
+                }
+
+                .left {
+                    display: none;
+                }
+
+                .REG-btn {
+                    display: none;
+                }
+
+                .cards-area,
+                .projects-area,
+                .contact-container {
+                    flex-direction: column;
+                }
+
+                .hero h2 {
+                    font-size: 28px;
+                }
+
+                .hero p {
+                    font-size: 16px;
+                }
+
+                .info img {
+                    max-width: 250px;
+                }
+
+                .contact h1 {
+                    font-size: 30px;
+
+                    .about-me p {
+                        font-size: 16px;
+                    }
+
+                    .cards,
+                    .proj,
+                    .proj-two {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+
+                    .contact-container input,
+                    .contact-container textarea {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+
+            }
+
+            @media (max-width: 590px) {
+
+                .main {
+                    display: flex;
+                    flex-direction: column-reverse;
+
+                }
+
+            }
+
+            @media (max-width: 480px) {
+
+                .hero h2 {
+                    font-size: 18px;
+                }
+
+                .hero p {
+                    font-size: 14px;
+                }
+
+                .info img {
+                    max-width: 180px;
+                }
+
+                .about-me p {
+                    font-size: 14px;
+                }
+
+                .cards,
+                .proj {
+                    width: 100%;
+                    max-width: 100%;
+                    margin: 10px 0;
+                }
+
+                .contact-container input,
+                .contact-container textarea {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- CODE BY ZAHEER SHAH -->
+
+        <!-- section 1 -->
+        <section class="nav-bar">
+            <nav class="nav-container">
+                <div class="mylogo">
+                    <img src="zee.webp" alt="MY LOGO">
+                </div>
+                <div class="left">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#project">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="REG-btn">
+                    <button class="btn"><a href="cv.pdf">Resume</a></button>
+                    <button class="btn"><a href="mailto:zh5999969@gmail.com">E-mail</a></button>
+                    <button class="btn"><a href="https://github.com/zaheer-shah" target="_blank">Github</a></button>
+                </div>
+                <!-- from ---------------------------- -->
+                <div class="lines" id="hamburger">
+                    <img src="3lines.png" alt="3lines">
+                </div>
+
+            </nav>
+        </section>
+
+        <!-- Side Menu ------------------------------------ -->
+        <div id="side-menu" class="side-menu">
+            <p class="closebtn" id="closebtn">&times;</p>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#project">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <!-- section 2 -->
+        <section class="home" id="home">
+            <div class="main">
+                <div class="hero">
+                    <h2>I'm <span>Syed Zaheer Hussain Shah</span></h2>
+                    <p>A Front-End Web Developer passionate about creating interactive and user-friendly web
+                        applications.
+                    </p>
+                    <a href="mailto:zh5999969@gmail.com">Reach Me</a>
+                </div>
+                <div class="info">
+                    <img src="zeer.png" alt="Profile Image">
+                </div>
+            </div>
+        </section>
+
+        <!-- section 3 -->
+        <section class="about-me" id="about">
+            <h1>About Me</h1>
+            <p>I am a passionate Front-End Web Developer with a strong foundation in HTML, CSS, JavaScript, and modern
+                web
+                development tools. I am dedicated to creating user-friendly and visually appealing websites. My goal is
+                to
+                continuously improve my skills and stay updated with the latest industry trends.</p>
+        </section>
+
+        <!-- section 4 -->
+        <section class="services" id="services">
+            <h1>My Services</h1>
+            <div class="cards-area">
+                <div class="cards">
+                    <img src="front.png" alt="Service 1">
+                    <span>Web Development</span>
+                </div>
+                <div class="cards">
+                    <img src="wordpress.png" alt="Service 2">
+                    <span>Wordpress</span>
+                </div>
+                <div class="cards">
+                    <img src="graphic.png" alt="Service 3">
+                    <span>Graphic Designing</span>
+                </div>
+                <div class="cards">
+                    <img src="smm.jpg" alt="Service 3">
+                    <span>Social Media Marketing</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 5 -->
+        <section class="projects" id="project">
+            <h1>My Projects</h1>
+            <div class="projects-area">
+                <div class="proj">
+                    <h3>TO-Do List</h3>
+                    <p>created with html,css and javascript and fully function app, includes functions like edit , save
+                        ,
+                        check/uncheck and delete list.</p>
+                    <a href="https://to-do-list-by-zaheer-shah.vercel.app/" target="_blank">View Project</a>
+                </div>
+                <div class="proj">
+                    <h3>Color with code Generator</h3>
+                    <p>created with html,css and javascript and just click the given button and it will
+                        generate new color on every click. </p>
+                    <a href="https://random-color-code-generator-by-zaheer-shah.vercel.app/" target="_blank">View
+                        Project</a>
+                </div>
+                <div class="proj">
+                    <h3>Learn Coding</h3>
+                    <p>created with html,css and javascript , its kinda duplication of w3schools website but not that
+                        level
+                        , but with simple web design </p>
+                    <a href="https://learn-code-by-zaheershah-nu.vercel.app/" target="_blank">View Project</a>
+                </div>
+                <div class="proj">
+                    <h3>Resturant Website</h3>
+                    <p>created with html and css only a very good looking interface website , which atttracts users
+                        towards
+                        itself.</p>
+                    <a href="project2.html">View Project</a>
+                </div>
+                <div class="proj">
+                    <h3>Music Website</h3>
+                    <p>created with html,css and javascript and fully function app,includes songs and songs can played
+                        online and can also be downloaded.</p>
+                    <a href="https://music-website-by-zaheershah.vercel.app/" target="_blank">View Project</a>
+                </div>
+                <div class="proj">
+                    <h3>Landing page</h3>
+                    <p>created with html,css and javascript , it contains some basic information about me and its
+                        interface
+                        is also fine and attractive.</p>
+                    <a href="https://landing-page-by-zaheershah.vercel.app/" target="_blank">View Project</a>
+                </div>
+                <div class="proj">
+                    <h3>E-commerce Website</h3>
+                    <p>created with html,css and javascript , e commerce site with products and its
+                        interface
+                        is also fine and attractive</p>
+                    <a href="">Project will update soon</a>
+                </div>
+                <div class="proj">
+                    <h3>E-commerce Website 2</h3>
+                    <p>created with html,css and javascript , e commerce site with products and its
+                        interface
+                        is also fine and attractive</p>
+                    <a href="">Project will update soon</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- section 6 -->
+        <section id="contact" class="contact">
+            <h1>Contact with me</h1>
+
+            <form onsubmit="return fun()" class="contact-container">
+
+                <span class="text-danger" id="nameval"></span>
+                <input type="text" id="username" placeholder="write your name">
+
+                <span class="text-danger" id="emailval"></span>
+                <input type="email" id="mail" placeholder="write your email">
+
+                <span class="text-danger" id="mobileval"></span>
+                <input type="number" id="mobile" placeholder="write your phone">
+
+                <span class="text-danger" id="textval"></span>
+                <textarea name="text" id="textarea" placeholder=" write your subject"></textarea>
+
+                <button class="sub-btn" onclick="Submit"> Submit</button>
+            </form>
+        </section>
+
+
+        <footer style="text-align: center; color: rgb(0, 0, 0);"> &copy SYED ZAHEER HUSSAIN SHAH - 2024</footer>
+
+        <script src="script.js"></script>
+    </body>
+
+    </html>
